@@ -67,7 +67,7 @@ class ValidarDados
         endif;
     }
 
-    public static function ValidarDataAAAAMMDD($dados, $format = 'Y/m/d')
+    public static function ValidarDataAAAAMMDD($dados, $format = 'Y-m-d')
     {
         $d = DateTime::createFromFormat($format, $dados);
         $result = $d && $d->format($format) == $dados;
@@ -101,5 +101,32 @@ class ValidarDados
         else :
             return "invalido";
         endif;
+    }
+
+    public static function ValidarEmail($dados)
+    {
+        if (filter_var($dados, FILTER_VALIDATE_EMAIL)) {
+            return "valido";
+        } else {
+            return "invalido";
+        }
+    }
+
+    public static function ValidarSomenteNumeros($dados)
+    {
+        if (filter_var($dados, FILTER_VALIDATE_INT)) {
+            return "valido";
+        } else {
+            return "invalido";
+        }
+    }
+
+    public static function ValidaIP($dados)
+    {
+        if (filter_var($dados, FILTER_VALIDATE_IP)) {
+            return "valido";
+        } else {
+            return "invalido";
+        }
     }
 }

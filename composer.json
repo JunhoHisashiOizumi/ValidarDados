@@ -11,7 +11,7 @@
     }],
     "autoload": {
         "psr-4": {
-            "OizumiJunho\\DataEHora\\": "src/ValidarDados"
+            "OizumiJunho\\ValidarDados\\": "src/ValidarDados"
         },
         "files": [
             "src/ValidarDados/Config.php"
