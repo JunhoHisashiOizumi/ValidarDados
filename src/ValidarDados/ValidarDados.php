@@ -129,4 +129,13 @@ class ValidarDados
             return "invalido";
         }
     }
+
+    public static function ValidaFload($dados)
+    {
+        if (filter_var($dados, FILTER_VALIDATE_FLOAT)) {
+            return "valido";
+        } else {
+            return "invalido";
+        }
+    }
 }
